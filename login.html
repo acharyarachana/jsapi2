@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<body style="border:1px solid ;">
+
+     <h1 style="text-align: center;" > Login</h1>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Name: <input  id="name" type=" text" name="name"><br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Password: <input id="pass" type="password" name="pass"><br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button class="btn" type="button">Login</button>
+       <script>
+
+     document.querySelector(".btn").addEventListener("click",
+       function(){
+       	let name= document.querySelector("#name").textContent;
+       	let pass= document.querySelector("#pass").textContent;
+
+         let objd= {
+         email:"email",
+          password: "pass"
+         };
+
+        let ob= new XMLHttpRequest();
+        
+        ob.open("GET","http://restapi.adequateshop.com/api/authaccount/login");
+        ob.send(objd); 
+       });
+
+
+
+
+        </script>
+
+
+           </body>
+           </html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+</head>
+<body style="border:1px solid ;">
+
+     <h1 style="text-align: center;" > Registration Form</h1>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Name: <input  id="name" type=" text" name="name"><br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Email: <input id="email" type="email" name="email"><br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Password: <input id="pass" type="password" name="pass"><br>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button class="btn" type="button"> Register </button>
+       
+
+       <script>
+         'use strict';
+       
+       document.querySelector(".btn").addEventListener("click",
+       function getval(){
+       
+       	let name= document.querySelector("#name").value;
+       	let email= document.querySelector("#email").value;
+       	let pass= document.querySelector("#pass").value;
+
+       	let x= new XMLHttpRequest();
+       	//Send the proper header information along with the request
+
+        let obj= {
+        	name: "name",
+         email:"email",
+          password: "pass"
+         };
+       	x.onload= function()
+       	{
+       	 console.log(x.responseText);	
+       	}
+       	x.open("POST", "http://restapi.adequateshop.com/api/authaccount/registration");
+       	//x.setRequestHeader('Content-type', 'application/json');  
+
+         x.send(obj);      
+      
+});
+
+
+</script>
+</body>
+
+</html>
